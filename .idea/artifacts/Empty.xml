@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Empty">
+    <output-path>$PROJECT_DIR$/out/artifacts/Empty</output-path>
+    <root id="archive" name="Empty.jar">
+      <element id="module-output" name="SupportOnline2" />
+      <element id="library" level="project" name="activation" />
+      <element id="library" level="project" name="deploy" />
+      <element id="library" level="project" name="java-json" />
+      <element id="library" level="project" name="javax.mail" />
+      <element id="library" level="project" name="junit-4.13-beta-3" />
+      <element id="library" level="project" name="mail" />
+      <element id="library" level="project" name="mysql-connector-java-5.0.5" />
+      <element id="library" level="project" name="org.apache.commons.io" />
+      <element id="library" level="project" name="smtp-1.6.2" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/production/SupportOnline2/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

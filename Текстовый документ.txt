@@ -1,0 +1,28 @@
+ function codePassword(password: string): string;
+ var
+  resultValue ,S,r,str, alfabet: string;
+  i,num: Integer;
+ begin
+   resultValue:='';
+   alfabet :=  'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789'   ;
+   for i:=1 to length(password) do
+     begin
+	    S := password[i];
+      num:= Pos( S, alfabet);
+
+      if(num = 0)  then  r:= IntToStr(ord(S[1])*256-7)
+      else  r:=Chr( num +48) ;
+
+      resultValue := Concat(resultValue,r,'!!!');
+    end;
+  Result := resultValue
+ end;
+
+ 2A12IR4gW3d52Fl2ym
+g!!!U!!!f!!!g!!!R!!!N!!!i!!!?!!!L!!!h!!!=!!!j!!!g!!!X!!!C!!!g!!!6!!!J!!!
+
+
+
+
+Help_Balver_Please
+Z!!!3!!!C!!!:!!!24313!!!b!!!;!!!C!!!G!!!3!!!4!!!24313!!!T!!!C!!!3!!!;!!!<!!!3!!!
