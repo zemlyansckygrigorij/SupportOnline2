@@ -1,6 +1,7 @@
 package com.test;
 
 import com.control.*;
+import com.model.Settings;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,16 +28,41 @@ public class ControlTeamViewerTest {
 
     @Test
     public void checkTeamViewerTestExist(){
-
+        if( checkProcessExist("TeamViewer.exe"))killProcess("TeamViewer.exe");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            //  JFrame myWindow = new FrameException("Ошибка прерывания !!!");
+            Settings.writeError(e, "Ошибка прерывания ");
+            e.printStackTrace();
+        }
         ControlTeamViewer.runTeamviewer();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            //  JFrame myWindow = new FrameException("Ошибка прерывания !!!");
+            Settings.writeError(e, "Ошибка прерывания ");
+            e.printStackTrace();
+        }
         System.out.println("проверка запуска TeamViewer");
         try {
-            assertTrue(checkProcessExist("TeamViewer.exe"));
+            assertTrue(checkProcessExist("TeamViewer.exe")||checkProcessExist("TeamViewerQS.exe"));
             System.out.println("TeamViewer запускается ");
         }catch(AssertionError e ){
             System.out.println("Внимание Ошибка :TeamViewer не запускается ");
             // throw e;
             e.printStackTrace();
+        }finally {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                //  JFrame myWindow = new FrameException("Ошибка прерывания !!!");
+                Settings.writeError(e, "Ошибка прерывания ");
+                e.printStackTrace();
+            }
+            if( checkProcessExist("TeamViewer.exe"))killProcess("TeamViewer.exe");
+            if( checkProcessExist("TeamViewerQS.exe"))killProcess("TeamViewerQS.exe");
+
         }
 
     }

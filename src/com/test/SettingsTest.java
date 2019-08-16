@@ -49,7 +49,7 @@ public class SettingsTest {
     @Test
     public void checkSettingsValueEqualsWinRegistre(String value){
         System.out.println("Проверка соответствия  свойства "+value+" settings  с редактором Реестра");
-        String settingsValue = settings.get("value");
+        String settingsValue = settings.get(value);
         String valueWinRegistre = null;
         try {
             valueWinRegistre = WinRegistry.readString(
@@ -62,6 +62,8 @@ public class SettingsTest {
             e.printStackTrace();
         }
         try {
+            System.out.println("settingsValue - "+settingsValue);
+            System.out.println("valueWinRegistre - " +valueWinRegistre);
             assertEquals(settingsValue,valueWinRegistre);
             System.out.println("соответствует");
         }catch(AssertionError e ){
